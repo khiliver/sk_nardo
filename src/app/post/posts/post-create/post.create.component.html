@@ -1,7 +1,11 @@
-<h1>MAMAMOBLUE</h1>
-<mat-card appearance="outlined">
-    <textarea cols="30" rows="10" placeholder="Input here..... " [(ngModel)]="PostInput"></textarea>
-    <button mat-raised-button color="primary" (click)="onAddPost()">click</button>
-    <br>
+<mat-card>
+    <mat-form-field>
+        <input matInput type="text" [(ngModel)]="enteredTitle" placeholder="Title">
+
+    </mat-form-field>
+    <mat-form-field>
+        <textarea rows="6" matInput [(ngModel)]="enteredContent" [ngModelOptions]="{standalone: true}"
+        placeholder="Content"></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onAddPost()">save</button>
 </mat-card>
-{{ NewPost }}
