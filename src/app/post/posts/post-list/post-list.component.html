@@ -1,13 +1,21 @@
 <mat-card>
+  <!-- Accordion Section with Posts -->
   <mat-accordion multi="true" *ngIf="posts.length>=0">
     <mat-expansion-panel *ngFor="let post of posts">
       <mat-expansion-panel-header>
-        {{post.title}}
+        {{ post.title }}
       </mat-expansion-panel-header>
       <p>
-        {{post.content}}
+        {{ post.content }}
       </p>
+      <mat-action-row>
+        <!-- Edit and Delete Buttons with Raised Styling -->
+        <button mat-raised-button color="accent">Edit</button>
+        <button mat-raised-button color="accent">Delete</button>
+      </mat-action-row>
     </mat-expansion-panel>
   </mat-accordion>
+
+  <!-- Message if No Posts Exist -->
   <p *ngIf="posts.length<=0">No post added yet!</p>
 </mat-card>
